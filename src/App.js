@@ -4,6 +4,7 @@ import zxcvbn from 'zxcvbn';
 import { RiRefreshLine } from 'react-icons/ri'
 import generatePassword from './generatePassword.js';
 import PasswordStrengthBar from './PasswordStrengthBar.js';
+import logo from './logo.png';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,8 +30,10 @@ function App() {
   return (
     <div className="container">
       <header className="header">
+        <div className="title">
+        <img src={logo} alt="Logo" className="logo" />
         <h1>RandoPass</h1>
-        
+        </div>
         <h2>Generate your secure password</h2>
       </header>
       <section>
