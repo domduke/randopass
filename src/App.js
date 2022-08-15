@@ -1,34 +1,42 @@
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import './App.css';
+import zxcvbn from 'zxcvbn';
 import generatePassword from './generatePassword.js';
+import PasswordStrengthBar from './PasswordStrengthBar.js';
+import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function App() {
   const [characterAmount, setCharacterAmount] = useState(10);
   const [includesUppercase, setIncludesUppercase] = useState(true);
   const [includesNumbers, setIncludesNumbers] = useState(true);
   const [includesSymbols, setIncludesSymbols] = useState(true);
   const [password, setPassword] = useState('');
+  const [score, setScore] = useState(0)
   useEffect(() => {
-      setPassword(
-        generatePassword(characterAmount, includesUppercase, includesNumbers, includesSymbols)
-      );
-    
+    const updatedPassword = generatePassword(characterAmount, includesUppercase, includesNumbers, includesSymbols)
+      setPassword(updatedPassword);
+      setScore(zxcvbn(updatedPassword).score);
   }, [characterAmount, includesUppercase, includesNumbers, includesSymbols]);
+
   function copyPasswordToClipboard(e, password) {
     e.preventDefault();
     navigator.clipboard.writeText(password);
     toast("Password copied!");
   }
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="container">
+      <header className="header">
         <h1>RandoPass</h1>
+        
+        <h2>Generate your secure password</h2>
       </header>
       <section>
         <h3 className="password-display" id="passwordDisplay">
           {password}
         </h3>
+          <PasswordStrengthBar score={score} />
         <form id="passwordGeneratorForm" className="form">
           <label htmlFor="characterAmountNumber">Number Of Characters</label>
           <div className="character-amount-container">
@@ -75,7 +83,7 @@ function App() {
             onChange={e => setIncludesSymbols(e.target.checked)}
           />
 
-          <button className="btn" onClick={(e) => copyPasswordToClipboard(e, password)}>
+          <button className="btn" onClick={e => copyPasswordToClipboard(e, password)}>
             Copy to Clipboard
           </button>
           <ToastContainer />

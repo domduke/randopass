@@ -1,7 +1,7 @@
 body {
-  background-color: #333;
+  background-color: #eee;
   margin: 0;
-  color: white;
+  color: #000;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,10 +10,10 @@ body {
 }
 
 .container {
-  background-color: #006699;
+  background-color: #fff;
   padding: 3rem;
   border-radius: 1rem;
-  border: 2px solid black;
+  box-shadow: -1px 5px 16px 7px #BFBFBF;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,27 +55,28 @@ input[type=checkbox] {
   background-color: white;
   color: black;
   padding: 1rem;
+  margin-bottom: 0;
   border: 1px solid #333;
   height: 2rem;
-  width: 350px;
+  /* width: 355px; */
   display: flex;
   justify-content: center;
   align-items: center;
   word-break: break-all;
-  border-radius: 0.5rem;
+
 }
 
 .btn {
   grid-column: span 2;
-  background-color: transparent;
+  background-color: #0075ff;
   border: 2px solid white;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: 1rem;
 }
 
 .btn:hover {
-  background-color: #ffff33;
+  background-color:#328df8;
 }
