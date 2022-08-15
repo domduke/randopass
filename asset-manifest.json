@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/randopass/static/css/main.29cfcabb.css",
+    "main.js": "/randopass/static/js/main.fa222619.js",
+    "static/js/787.89466582.chunk.js": "/randopass/static/js/787.89466582.chunk.js",
+    "index.html": "/randopass/index.html",
+    "main.29cfcabb.css.map": "/randopass/static/css/main.29cfcabb.css.map",
+    "main.fa222619.js.map": "/randopass/static/js/main.fa222619.js.map",
+    "787.89466582.chunk.js.map": "/randopass/static/js/787.89466582.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29cfcabb.css",
+    "static/js/main.fa222619.js"
+  ]
+}
