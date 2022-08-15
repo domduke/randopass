@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import generatePassword from './generatePassword.js';
 function App() {
@@ -8,12 +10,16 @@ function App() {
   const [includesSymbols, setIncludesSymbols] = useState(true);
   const [password, setPassword] = useState('');
   useEffect(() => {
-    
       setPassword(
         generatePassword(characterAmount, includesUppercase, includesNumbers, includesSymbols)
       );
     
   }, [characterAmount, includesUppercase, includesNumbers, includesSymbols]);
+  function copyPasswordToClipboard(e, password) {
+    e.preventDefault();
+    navigator.clipboard.writeText(password);
+    toast("Password copied!");
+  }
   return (
     <div className="App">
       <header className="App-header">
@@ -69,9 +75,10 @@ function App() {
             onChange={e => setIncludesSymbols(e.target.checked)}
           />
 
-          <button className="btn" onClick={() => navigator.clipboard.writeText(password)}>
+          <button className="btn" onClick={(e) => copyPasswordToClipboard(e, password)}>
             Copy to Clipboard
           </button>
+          <ToastContainer />
         </form>
       </section>
     </div>

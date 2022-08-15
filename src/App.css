@@ -38,6 +38,10 @@ label {
   font-weight: bold;
 }
 
+input[type=checkbox] {
+    transform: scale(1.2);
+}
+
 .character-amount-container {
   display: flex;
   align-items: center;
@@ -73,5 +77,5 @@ label {
 }
 
 .btn:hover {
-  background-color: #ffffff33;
+  background-color: #ffff33;
 }
