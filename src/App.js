@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import zxcvbn from 'zxcvbn';
+import { RiRefreshLine } from 'react-icons/ri'
 import generatePassword from './generatePassword.js';
 import PasswordStrengthBar from './PasswordStrengthBar.js';
 import './App.css';
@@ -35,6 +36,7 @@ function App() {
       <section>
         <h3 className="password-display" id="passwordDisplay">
           {password}
+          <span className="refresh-button" onClick={() => setPassword(generatePassword(characterAmount, includesUppercase, includesNumbers, includesSymbols))}><RiRefreshLine /></span>
         </h3>
           <PasswordStrengthBar score={score} />
         <form id="passwordGeneratorForm" className="form">
