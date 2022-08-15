@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+
 body {
   background-color: #eee;
   margin: 0;
@@ -9,6 +11,11 @@ body {
   font-family: Arial, Monospaced;
 }
 
+h1 {
+  font-family: 'Yatra One', cursive;
+  font-size: 3rem;
+  color: #361b99;
+}
 .container {
   background-color: #fff;
   padding: 3rem;
@@ -40,6 +47,11 @@ label {
 
 input[type=checkbox] {
     transform: scale(1.2);
+    background-color: #361b99;
+}
+
+input[type=range], input[type=checkbox]:checked {
+  filter: hue-rotate(40deg) brightness(0.8);
 }
 
 .character-amount-container {
@@ -54,11 +66,11 @@ input[type=checkbox] {
 .password-display {
   background-color: white;
   color: black;
+  font-weight: normal;
   padding: 1rem;
   margin-bottom: 0;
   border: 1px solid #333;
   height: 2rem;
-  /* width: 355px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +80,7 @@ input[type=checkbox] {
 
 .btn {
   grid-column: span 2;
-  background-color: #0075ff;
+  background-color: #361b99;
   border: 2px solid white;
   color: white;
   padding: 1rem;
@@ -78,5 +90,5 @@ input[type=checkbox] {
 }
 
 .btn:hover {
-  background-color:#328df8;
+  background-color:#452e99;
 }

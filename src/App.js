@@ -13,7 +13,7 @@ function App() {
   const [includesNumbers, setIncludesNumbers] = useState(true);
   const [includesSymbols, setIncludesSymbols] = useState(true);
   const [password, setPassword] = useState('');
-  const [score, setScore] = useState(0)
+  const [score, setScore] = useState(0);
   useEffect(() => {
     const updatedPassword = generatePassword(characterAmount, includesUppercase, includesNumbers, includesSymbols)
       setPassword(updatedPassword);
@@ -43,7 +43,7 @@ function App() {
             <input
               type="range"
               min="1"
-              max="50"
+              max="40"
               value={characterAmount}
               id="characterAmountRange"
               onChange={e => setCharacterAmount(e.target.value)}
@@ -52,7 +52,7 @@ function App() {
               className="number-input"
               type="number"
               min="1"
-              max="50"
+              max="40"
               value={characterAmount}
               onChange={e => setCharacterAmount(e.target.value)}
               id="characterAmountNumber"
